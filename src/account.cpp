@@ -75,6 +75,26 @@ namespace hayohtee
             this->balance = balance;
     }
     
+    bool Account::deposit(const double &amount)
+    {
+        if (amount > 0)
+        {
+            balance += amount;
+            return true;
+        }   
+
+        return false;
+    }
+    
+    bool Account::withdraw(const double &amount)
+    {
+        if (amount > balance)
+            return false;
+        
+        balance -= amount;
+        return true;
+    }
+    
     std::istream& operator>>(std::istream &ins, Account &account)
     {
         std::string value;
