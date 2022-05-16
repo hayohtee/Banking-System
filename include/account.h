@@ -28,12 +28,15 @@ namespace hayohtee
 
         friend std::ostream &operator<<(std::ostream &outs, const Account &account);
         friend std::istream &operator>>(std::istream &ins, Account &account);
+
+        bool deposit(const double &amount);
+        bool withdraw(const double &amount);
     
     private:
         std::string account_number{};
         std::string first_name{};
         std::string last_name{};
         std::string pin_number{};
-        double balance;
-    }
+        double balance{};
+    };
 }
